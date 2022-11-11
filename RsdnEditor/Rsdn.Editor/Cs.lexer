@@ -1,0 +1,84 @@
+Letter = UnicodeChar + '_'.
+
+tab                = '\u0009'. /*  9 = tabulator */
+eol                = '\u000a'. /* 10 = line feed */
+cr                 = '\u000d'. /* 13 = carriage return */
+newLine            = cr + eol. /* Line separator character (U+2028) + Paragraph separator character (U+2029) */
+eof                = '\0'.
+
+letter             = 'A' .. 'Z' + 'a' .. 'z' + UnicodeChar + '_'.
+decDigit           = "0123456789".
+hexDigit           = decDigit + "ABCDEFabcdef".
+notDigit           = ANY - decDigit.
+
+char               = ANY - "'" - '\\' - newLine.
+verbatimStringChar = ANY - '"'.
+regularStringChar  = ANY - '"' - '\\' - newLine.
+inputChar          = ANY - newLine - eof.
+fileNameChar       = ANY - '"' - newLine - '\u0022' .
+    
+notNumSign         = ANY - "#".
+notNewLine         = ANY - newLine .
+notAsterisk        = ANY - "*" .
+notSlash           = ANY - "/".
+
+ws                 = " " + tab + '\u000b' + '\u000c'. /* Any character with Unicode class Zs */
+
+
+DigitLiteral =
+ /*--- boolean literal: "true" | "false" -> moved to PrimaryExpr */
+  
+  /*--- integer literal: */
+    /*--- decimal: */
+  ( decDigit { decDigit } | decDigit { decDigit } CONTEXT (".")
+    /*--- hexadecimal: */
+  | ( "0x" | "0X" ) hexDigit { hexDigit }
+  )
+    /*--- integer type suffix */
+  [ "U" | "u" | "L" | "l" | "UL" | "Ul" | "uL" | "ul" | "LU" | "Lu" | "lU" | "lu" ]
+  /*--- real literal (without integer part) */
+| "." decDigit { decDigit } 
+  [ ( "e" | "E" ) [ "+" | "-" ] decDigit { decDigit } ] 
+  [ "F" | "f" | "D" | "d" | "M" | "m" ]
+  /*--- real literal (with integer part) */ 
+| decDigit { decDigit } 
+  ( "." decDigit { decDigit } 
+    [( "e" | "E" ) [ "+" | "-" ] decDigit { decDigit } ] 
+    [ "F" | "f" | "D" | "d" | "M" | "m" ]
+  | ( "e" | "E" ) [ "+" | "-" ] decDigit { decDigit }
+    [ "F" | "f" | "D" | "d" | "M" | "m" ]
+  | "F" | "f" | "D" | "d" | "M" | "m"
+  )
+.
+
+CharLiteral
+=
+  /*--- character literal */
+ "'" (    char
+        /*--- simple escape sequence */ 
+      | "\\\'" | "\\\"" | "\\\\" | "\\0" | "\\a" | "\\b" | "\\f" | "\\n" | "\\r" | "\\t" | "\\v"
+        /*--- hexadecimal escape sequence */
+      | "\\x" hexDigit [ hexDigit ] [ hexDigit ] [ hexDigit ]
+        /*--- unicode character escape sequence */
+      | "\\u" hexDigit hexDigit hexDigit hexDigit
+      | "\\U" hexDigit hexDigit hexDigit hexDigit hexDigit hexDigit hexDigit hexDigit
+      ) 
+  "'"    
+
+
+InlineString = '"' 
+	(
+		Letter
+	| 	'\\' 
+		(
+			'\\' 
+		|	't' 
+		|	'n'
+		|	'r'
+		|	'v'
+		|	'v'
+		)
+	)* '"'
+.
+	
+MultilineString = '@' '"' (UnicodeChar | '"' '"')* '"'.

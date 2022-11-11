@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" DisplayMemberTypes="true">
+  <Font Name="Tahoma" Size="8.25" />
+  <Struct Name="Rsdn.Editor.AppliedStyle">
+    <Position X="2.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\Styles\AppliedStyle.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQEAAAAEABAAACAAAAABAAAACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Rsdn.Editor.StyledRange">
+    <Position X="2" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\Styles\StyledRange.cs</FileName>
+      <HashCode>AAAAAgAAAAAAAAAEAAAAEAAAAIAAAAAABAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Rsdn.Editor.HitTestInfo">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\View\HitTest\HitTestInfo.cs</FileName>
+      <NewMemberFileName>ObjectModel\View\HitTest\hittestinfo.cs</NewMemberFileName>
+      <HashCode>AAAIAAAAAAAAAAAgAAAAAAAABAAAAAAACAAEgAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Rsdn.Editor.Position&lt;T&gt;">
+    <Position X="1.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\View\Position\Position.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAEQEgACBAgAAAAAAAIAAAAAAAgABDyA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="Rsdn.Editor.Range&lt;T&gt;">
+    <Position X="4" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\View\Position\Range.cs</FileName>
+      <HashCode>EAIAAAAAACAAAAAAAAAAAAAAAAAAIAAAEAAAAAAIAAA=</HashCode>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Rsdn.Editor.ViewArea">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\View\HitTest\ViewArea.cs</FileName>
+      <HashCode>AIAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

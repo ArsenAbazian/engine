@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Lexer Key="CSharp">
+    <Scanners>
+        <Scanner Key="CSharpScanner">
+            <Pattern Type="Operator" Value="{'&lt;&gt;/[]|&amp;!=-+*^%.:'}" />
+            <Pattern Type="Numeric" Value="&lt;N&gt;['LDF.']['x']&lt;N'ABCDEF+'&gt;" />
+            <Pattern Type="Identifier" Value="(A'_#'){X'_'}" />
+        </Scanner>
+		<Scanner Key="CSharpScanner2">
+			<Pattern Type="Operator" Value="{'&lt;&gt;/[]|&amp;!=-+*^%.:'}" />
+			<Pattern Type="Numeric" Value="&lt;N&gt;['LDF.']['x']&lt;N'ABCDEF+'&gt;" />
+			<Pattern Type="Identifier" Value="(A'_#'){X'_'}" />
+		</Scanner>
+    </Scanners>
+	
+    <Blocks>
+        <Block Key="Root" CaseSensitive="true" Multiline="true" Scanner="CSharpScanner">
+			<Stylesheet>
+				<Add Class="RootBlock" For="Block"/>				
+			</Stylesheet>
+			<KeywordSet>
+                <Keywords Class="BasicKeywords">
+					using assembly event field method param property return
+					type typevar namespace void where class struct new partial
+					interface enum delegate base this ref out params
+					public protected internal private unsafe abstract sealed
+					static char extern override readonly virtual volatile const
+					implicit explicit operator add remove float double decimal
+					bool get set true false is as stackalloc checked unchecked
+					if else switch while do for foreach in break continue yield"
+					throw lock fixed case default null typeof sizeof try finally
+					catch goto
+				</Keywords>
+				<Keywords Class="HiddenKeywords">
+					__arglist __makeref
+				</Keywords>
+					<Keywords Class="TypesKeywords">
+					byte short int long sbyte ushort uint ulong string object char
+				</Keywords>
+            </KeywordSet>
+        </Block>
+        <Block Key="SinglelineComment" CaseSensitive="true" Multiline="false" Parent="Root">
+			<Stylesheet>
+				<Add Class="Comment" For="Block"/>
+			</Stylesheet>
+			<BlockStarts>
+				<Start Type="Literal">//</Start>
+			</BlockStarts>			
+        </Block>
+        <Block Key="DocComment" CaseSensitive="true" Multiline="false" Parent="Root">
+			<Stylesheet>
+				<Add Class="Comment" For="Block" />
+				<Add Class="DocCommentStart" For="BlockStart"/>
+			</Stylesheet>
+            <BlockStarts>
+                <Start Type="Literal">///</Start>
+            </BlockStarts>
+        </Block>
+        <Block Key="XmlComment" End="&gt;" CaseSensitive="true" Multiline="false" Parent="DocComment">
+			<Stylesheet>
+				<Add Class="XmlComment" For="Block"/>
+			</Stylesheet>
+            <BlockStarts>
+                <Start Type="Literal">&lt;</Start>
+            </BlockStarts>
+        </Block>
+        <Block Key="MultilineComment" End="*/" CaseSensitive="true" Multiline="false" Parent="Root">
+			<Stylesheet>
+				<Add Class="Comment" For="Block"/>
+			</Stylesheet>
+			<BlockStarts>
+                <Start Type="Literal">/*</Start>
+            </BlockStarts>
+        </Block>
+        <Block Key="Char" End="'" CaseSensitive="true" Multiline="false" EscapeChar="\" Parent="Root">
+			<Stylesheet>
+				<Add Class="Char" For="Block"/>
+			</Stylesheet>
+			<BlockStarts>
+                <Start Type="Literal">'</Start>
+            </BlockStarts>
+        </Block>
+        <Block Key="String" End="&quot;" CaseSensitive="true" Multiline="false" EscapeChar="\" Parent="Root">
+            <BlockStarts>
+                <Start Type="Literal">"</Start>
+            </BlockStarts>
+        </Block>
+		<Block Key="VerbatimString" End="&quot;" CaseSensitive="true" Multiline="true" Parent="Root">
+			<Stylesheet>
+				<Add Class="String" For="Block"/>
+			</Stylesheet>
+			<BlockStarts>
+				<Start Type="Literal">@"</Start>
+			</BlockStarts>
+		</Block>
+    </Blocks>
+	
+    <Styles>
+        <Class Key="RootBlock" />
+		<Class Key="Char" />
+		<Class Key="Comment" />
+		<Class Key="XmlComment" />
+		<Class Key="DocCommentStart" />
+		<Class Key="String" />
+		<Class Key="Operator"/>
+		<Class Key="Numeric"/>
+		<Class Key="BasicKeywords"/>
+		<Class Key="TypesKeywords"/>
+		<Class Key="HiddenKeywords"/>
+    </Styles>
+	
+</Lexer>

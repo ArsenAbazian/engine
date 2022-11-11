@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Rsdn.Editor.Style">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\Styles\Style.cs</FileName>
+      <HashCode>AAAAIQAIgACkAAAEQAEAAAQAACCCAIAQAQCggAADAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rsdn.Editor.SelectionStyle">
+    <Position X="3.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\Styles\SelectionStyle.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rsdn.Editor.ImagedStyle">
+    <Position X="5.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\Styles\ImagedStyle.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rsdn.Editor.SimpleStyle">
+    <Position X="3.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\Styles\SimpleStyle.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rsdn.Editor.CombinedStyle">
+    <Position X="3.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>ObjectModel\Styles\CombinedStyle.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQAAAA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Struct Name="Rsdn.Editor.CombinedStyle.HashHelper" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ObjectModel\Styles\CombinedStyle.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+  </Class>
+</ClassDiagram>

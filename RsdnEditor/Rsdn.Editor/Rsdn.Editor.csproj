@@ -1,0 +1,309 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E46DA3C-1F4B-49C0-93F5-DB658983F5B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rsdn.Editor</RootNamespace>
+    <AssemblyName>Rsdn.Editor</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\libs\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PERF_TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunFxCop>false</RunFxCop>
+    <FxCopRules>-Microsoft.Design#CA1020;-Microsoft.Design#CA1060;-Microsoft.Naming#CA1707;-Microsoft.Performance#CA1811</FxCopRules>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;PERF_TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formatter\BreakLine.cs" />
+    <Compile Include="Formatter\Default\DefaultFormatter.cs" />
+    <Compile Include="Formatter\DefaultStyler\ConfigurableStyler.cs" />
+    <Compile Include="Formatter\DefaultStyler\IStyler.cs" />
+    <Compile Include="Formatter\DefaultStyler\RsdnState.cs" />
+    <Compile Include="Formatter\DefaultStyler\RsdnStyler.cs" />
+    <Compile Include="Formatter\DefaultStyler\State.cs" />
+    <Compile Include="Formatter\DefaultStyler\Styler.cs" />
+    <Compile Include="Formatter\IFormatter.cs" />
+    <Compile Include="Formatter\Lexing\Block.cs" />
+    <Compile Include="Formatter\Lexing\BlockType.cs" />
+    <Compile Include="Formatter\Lexing\CharKind.cs" />
+    <Compile Include="Formatter\Lexing\CheckTypes.cs" />
+    <Compile Include="Formatter\Lexing\ConfigurableScanner.cs" />
+    <Compile Include="Formatter\Lexing\DefaultStyleProcessor.cs" />
+    <Compile Include="Formatter\Lexing\DefinitionError.cs" />
+    <Compile Include="Formatter\Lexing\DefinitionErrorType.cs" />
+    <Compile Include="Formatter\Lexing\DefinitionReader.cs" />
+    <Compile Include="Formatter\Lexing\IConfigurableLexer.cs" />
+    <Compile Include="Formatter\Lexing\ILexer.cs" />
+    <Compile Include="Formatter\Lexing\IScanner.cs" />
+    <Compile Include="Formatter\Lexing\IStyleProcessor.cs" />
+    <Compile Include="Formatter\Lexing\Lexer.cs" />
+    <Compile Include="Formatter\Lexing\LexerManager.cs" />
+    <Compile Include="Formatter\Lexing\Pattern.cs" />
+    <Compile Include="Formatter\Lexing\PatternCombine.cs" />
+    <Compile Include="Formatter\Lexing\PatternParser.cs" />
+    <Compile Include="Formatter\Lexing\PatternStep.cs" />
+    <Compile Include="Formatter\Lexing\ReparseRule.cs" />
+    <Compile Include="Formatter\Lexing\Scanner.cs" />
+    <Compile Include="Formatter\Lexing\SimpleStyleProcessor.cs" />
+    <Compile Include="Formatter\Lexing\StringTable.cs" />
+    <Compile Include="Formatter\Lexing\Stylesheet.cs" />
+    <Compile Include="Formatter\Lexing\SyntaxDefinition.cs" />
+    <Compile Include="Formatter\Lexing\Token.cs" />
+    <Compile Include="Formatter\Lexing\TokenType.cs" />
+    <Compile Include="Formatter\SymType.cs" />
+    <Compile Include="Keyboard\KeyboardEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Keyboard\KeyboardEditor.Designer.cs">
+      <DependentUpon>KeyboardEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboard\KeyboardEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboard\KeyboardEditorForm.Designer.cs">
+      <DependentUpon>KeyboardEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboard\KeyboardShortcutsMap.cs" />
+    <Compile Include="Keyboard\ShortcutInfo.cs" />
+    <Compile Include="Keyboard\ViewCommandAttribute.cs" />
+    <Compile Include="Keyboard\ViewCommandInfo.cs" />
+    <Compile Include="ModuleSuppressions.cs" />
+    <Compile Include="ObjectModel\Collections\CollectionEx.cs" />
+    <Compile Include="ObjectModel\Collections\IViewCollection.cs" />
+    <Compile Include="ObjectModel\Collections\RowCollection.cs" />
+    <Compile Include="ObjectModel\Collections\DocumentRowCollection.cs" />
+    <Compile Include="ObjectModel\Edit\Command.cs" />
+    <Compile Include="ObjectModel\Edit\MultiCommand.cs" />
+    <Compile Include="ObjectModel\Edit\UpdateCommand.cs" />
+    <Compile Include="ObjectModel\Edit\DeleteCommand.cs" />
+    <Compile Include="ObjectModel\Edit\ICommand.cs" />
+    <Compile Include="ObjectModel\Edit\InsertCommand.cs" />
+    <Compile Include="ObjectModel\Edit\ModifyTextCommand.cs" />
+    <Compile Include="ObjectModel\Styles\CompleteStyle.cs" />
+    <Compile Include="ObjectModel\View\IViewInternal.cs" />
+    <Compile Include="ObjectModel\View\Document\Document.cs" />
+    <Compile Include="ObjectModel\View\Document\DocumentTypeConverter.cs" />
+    <Compile Include="ObjectModel\Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectModel\Row\FoldedRow.cs" />
+    <Compile Include="ObjectModel\Row\HyphenationRow.cs" />
+    <Compile Include="ObjectModel\Row\Row.cs" />
+    <Compile Include="ObjectModel\Row\RowVisitor\GetRealRowVisitor.cs" />
+    <Compile Include="ObjectModel\Row\RowVisitor\IRowVisitor.cs" />
+    <Compile Include="ObjectModel\Row\DocumentRow.cs" />
+    <Compile Include="ObjectModel\Styles\AppliedStyle.cs" />
+    <Compile Include="ObjectModel\Styles\CombinedStyle.cs" />
+    <Compile Include="ObjectModel\Styles\ImagedStyle.cs" />
+    <Compile Include="ObjectModel\Styles\SelectionStyle.cs" />
+    <Compile Include="ObjectModel\Styles\SimpleStyle.cs" />
+    <Compile Include="ObjectModel\Styles\Style.cs" />
+    <Compile Include="ObjectModel\Styles\StyledRange.cs" />
+    <Compile Include="ObjectModel\Styles\StyleType.cs" />
+    <Compile Include="ObjectModel\ImageAnimation\AnimatedImageInfo.cs" />
+    <Compile Include="ObjectModel\View\EventHandlers\BeforeChangeTex.cs" />
+    <Compile Include="ObjectModel\View\HitTest\HitTestInfo.cs" />
+    <Compile Include="ObjectModel\View\HitTest\ViewArea.cs" />
+    <Compile Include="ObjectModel\ImageAnimation\ImageAnimatorHelper.cs" />
+    <Compile Include="ObjectModel\View\IView.cs" />
+    <Compile Include="ObjectModel\View\IViewOwner.cs" />
+    <Compile Include="ObjectModel\View\PaintInfo.cs" />
+    <Compile Include="ObjectModel\View\Position\Position.cs" />
+    <Compile Include="ObjectModel\View\Position\PositionSpan.cs" />
+    <Compile Include="ObjectModel\View\Position\Range.cs" />
+    <Compile Include="ObjectModel\View\Selection\ISelection.cs" />
+    <Compile Include="ObjectModel\View\Selection\SelectionChangedEventArgs.cs" />
+    <None Include="ObjectModel\View\Selection\Selection.cs" />
+    <Compile Include="ObjectModel\ImageAnimation\StopAnimatorHelper.cs" />
+    <Compile Include="ObjectModel\View\Selection\SelectionChangingEventArgs.cs" />
+    <Compile Include="ObjectModel\View\View.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Paint.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Keyboard.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Debug.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Commands.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Commands.Edit.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Properties.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Selection.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.MouseEvents.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Dispose.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.DragDrop.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.State.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.DisplayRowsCalculations.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Caret.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Translate.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\View.Events.cs">
+      <DependentUpon>View.cs</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\ViewDecorator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\ViewScrollDecorator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectModel\View\ViewScrollDecorator.Designer.cs">
+      <DependentUpon>ViewScrollDecorator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Api.cs" />
+    <Compile Include="Utils\CaretHideHelper.cs" />
+    <Compile Include="Utils\RsdnGraphics\DoubleBuffering.cs" />
+    <Compile Include="Utils\FreezeRepaintHelper.cs" />
+    <Compile Include="Utils\IFreezeRepaint.cs" />
+    <Compile Include="Utils\IPAL.cs" />
+    <Compile Include="Utils\PerfCounter.cs" />
+    <Compile Include="Utils\RsdnGraphics\FontEx\CompleteFont.cs" />
+    <Compile Include="Utils\RsdnGraphics\FontEx\FontEx.cs" />
+    <Compile Include="Utils\RsdnGraphics\FontEx\FontExComparer.cs" />
+    <Compile Include="Utils\RsdnGraphics\FontEx\FontExField.cs" />
+    <Compile Include="Utils\RsdnGraphics\FontEx\FontHelper.cs" />
+    <Compile Include="Utils\RsdnGraphics\FontEx\IFont.cs" />
+    <Compile Include="Utils\RsdnGraphics\RsdnGraphics.cs" />
+    <Compile Include="Utils\RsdnGraphics\FontEx\ZoomedFont.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\WindowsPAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Keyboard\KeyboardEditor.resx">
+      <DependentUpon>KeyboardEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboard\KeyboardEditorForm.resx">
+      <DependentUpon>KeyboardEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectModel\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectModel\View\View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectModel\View\ViewScrollDecorator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ViewScrollDecorator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Documentation\HyphenationAlgorithm.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smile.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xz.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\super.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrokenImg.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camera.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KeyboardShortcutsMap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\InversedArrow.cur" />
+    <None Include="ClassDiagram.cd" />
+    <EmbeddedResource Include="Formatter\Lexing\Grammar.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Utils\RsdnGraphics\FontEx\!FontEx.cd" />
+    <None Include="ObjectModel\Styles\StyleDiagram.cd" />
+    <None Include="Rsdn.Editor.Keyboard.ViewCommandInfo.datasource" />
+    <None Include="Resources\lol.gif" />
+    <None Include="Resources\biggrin.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Documentation\Bugs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

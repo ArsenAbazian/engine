@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:simpleType name="PatternType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Numeric" />
+			<xs:enumeration value="Operator" />
+			<xs:enumeration value="Identifier" />
+		</xs:restriction>		
+	</xs:simpleType>
+
+	<xs:simpleType name="ReparseRule">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="OwnGrammar" />
+			<xs:enumeration value="ParentGrammar" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="BlockStartType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Literal" />
+			<xs:enumeration value="KeywordSet" />			
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StyleType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Block" />
+			<xs:enumeration value="BlockStart" />
+			<xs:enumeration value="BlockEnd" />
+			<xs:enumeration value="Operator" />
+			<xs:enumeration value="Numeric" />
+			<xs:enumeration value="Identifier" />
+			<xs:enumeration value="Keyword" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Char">
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>		
+	</xs:simpleType>
+
+	<xs:simpleType name="KeywordList">
+		<xs:list itemType="xs:string" />		
+	</xs:simpleType>
+	
+	<xs:element name="Lexer">		    
+		<xs:complexType>
+			<xs:sequence>
+				
+				<xs:element name="Scanners">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Scanner" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="Pattern">
+											<xs:complexType>
+												<xs:attribute name="Type" type="PatternType" use="required" />
+												<xs:attribute name="Value" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Key" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>     
+	        	        
+				<xs:element name="Blocks">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="Block">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Stylesheet" maxOccurs="1" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Add" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="Class" type="xs:string" />
+															<xs:attribute name="For" type="StyleType" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+
+										<xs:element name="BlockStarts" maxOccurs="1" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Start" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="Type" type="BlockStartType"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+
+										<xs:element name="KeywordSet" maxOccurs="1" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Keywords" maxOccurs="unbounded" minOccurs="1">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="KeywordList">
+																	<xs:attribute name="Class" type="xs:string" use="required" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										
+									</xs:sequence>
+									<xs:attribute name="Key" type="xs:string" use="required" />
+									<xs:attribute name="End" type="xs:string" use="optional" />
+									<xs:attribute name="CaseSensitive" type="xs:boolean" use="optional" />
+									<xs:attribute name="Multiline" type="xs:boolean" use="optional" />
+									<xs:attribute name="EscapeChar" type="Char" use="optional" />
+									<xs:attribute name="ContinuationChar" type="Char" use="optional" />
+									<xs:attribute name="ReparseRule" type="ReparseRule" use="optional" />
+									<xs:attribute name="FirstKeywordRule" type="xs:boolean" use="optional" />
+									<xs:attribute name="Scanner" type="xs:string" use="optional" />
+									<xs:attribute name="LexerCode" type="xs:string" use="optional" />
+									<xs:attribute name="Parent" type="xs:string" use="optional" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>				
+				</xs:element>
+				
+				<xs:element name="Styles">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded" minOccurs="0">
+							<xs:element name="Class">
+								<xs:complexType>
+									<xs:attribute name="Key" type="xs:string" use="required" />
+									<xs:attribute name="ForeColor" type="xs:string" use="optional" />
+									<xs:attribute name="BackColor" type="xs:string" use="optional" />
+									<xs:attribute name="FontName" type="xs:string" use="optional" />
+									<xs:attribute name="FontSize" type="xs:int" use="optional" />
+									<xs:attribute name="Italic" type="xs:boolean" use="optional" />
+									<xs:attribute name="Bold" type="xs:boolean" use="optional" />
+									<xs:attribute name="Underline" type="xs:boolean" use="optional" />
+									<xs:attribute name="Strikeout" type="xs:boolean" use="optional" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+				  </xs:complexType>
+				</xs:element>
+				
+			</xs:sequence>
+			<xs:attribute name="Key" type="xs:string" use="required" />
+		</xs:complexType>
+
+		<xs:keyref name="BlockParentRef" refer="BlockKey">
+			<xs:selector xpath="Blocks/Block"/>
+			<xs:field xpath="@Parent"/>
+		</xs:keyref>
+		
+		<xs:keyref name="BlockClassRef" refer="ClassKey">
+			<xs:selector xpath="Blocks/Block"/>
+			<xs:field xpath="@Class"/>
+		</xs:keyref>
+
+		<xs:keyref name="StylesheetClassRef" refer="ClassKey">
+			<xs:selector xpath="Blocks/Block/Stylesheet/Add"/>
+			<xs:field xpath="@Class"/>
+		</xs:keyref>
+
+		<xs:keyref name="BlockStartClassRef" refer="ClassKey">
+			<xs:selector xpath="Blocks/Block"/>
+			<xs:field xpath="@StartClass"/>
+		</xs:keyref>
+
+		<xs:keyref name="BlockEndClassRef" refer="ClassKey">
+			<xs:selector xpath="Blocks/Block"/>
+			<xs:field xpath="@EndClass"/>
+		</xs:keyref>
+
+		<xs:keyref name="KeywordClassRef" refer="ClassKey">
+			<xs:selector xpath="Blocks/Block/KeywordSet/Keywords"/>
+			<xs:field xpath="@Class"/>
+		</xs:keyref>
+
+		<xs:unique name="ScannerKey">
+			<xs:selector xpath="Scanners/Scanner"/>
+			<xs:field xpath="@Key"/>
+		</xs:unique>
+
+		<xs:unique name="BlockKey">
+			<xs:selector xpath="Blocks/Block"/>
+			<xs:field xpath="@Key"/>
+		</xs:unique>
+
+		<xs:unique name="ClassKey">
+			<xs:selector xpath="Styles/Class"/>
+			<xs:field xpath="@Key"/>
+		</xs:unique>
+		
+	</xs:element>
+</xs:schema>

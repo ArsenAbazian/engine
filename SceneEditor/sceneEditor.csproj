@@ -1,0 +1,1150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CF332004-D5C5-4CF5-AD6C-C7E264962F56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sceneEditor</RootNamespace>
+    <AssemblyName>sceneEditor</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="classMapper, Version=1.0.3128.34946, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\classMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ddsConvert, Version=1.0.3198.24240, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\ddsConvert.dll</HintPath>
+    </Reference>
+    <Reference Include="Rsdn.Editor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Rsdn.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptEdit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\ScriptEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="a3dGraph\a3dGraphPropForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="a3dGraph\a3dGraphPropForm.Designer.cs">
+      <DependentUpon>a3dGraphPropForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="a3dGraph\GraphControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="a3dGraph\GraphControl.designer.cs">
+      <DependentUpon>GraphControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="a3dGraph\GraphNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="a3dGraph\GraphNameForm.designer.cs">
+      <DependentUpon>GraphNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="a3dGraph\GraphViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="a3dScript\GListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="a3dScript\ScriptEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="a3dScript\ScriptEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="a3dScript\ScriptEditControl.Designer.cs">
+      <DependentUpon>ScriptEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="a3dScript\ScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="a3dScript\ScriptForm.Designer.cs">
+      <DependentUpon>ScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddLandscapeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLandscapeForm.Designer.cs">
+      <DependentUpon>AddLandscapeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddModelRefControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddModelRefControl.Designer.cs">
+      <DependentUpon>AddModelRefControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddModelRefForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddModelRefForm.Designer.cs">
+      <DependentUpon>AddModelRefForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRailSystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRailSystemForm.Designer.cs">
+      <DependentUpon>AddRailSystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AxisControl\AxisControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AxisControl\AxisControl.designer.cs">
+      <DependentUpon>AxisControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AxisControl\AxisesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AxisControl\AxisesControl.designer.cs">
+      <DependentUpon>AxisesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AxisControl\AxisesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AxisControl\AxisesForm.Designer.cs">
+      <DependentUpon>AxisesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AxisControl\MoveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AxisControl\MoveForm.Designer.cs">
+      <DependentUpon>MoveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AxisControl\TrackValueControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AxisControl\TrackValueControl.Designer.cs">
+      <DependentUpon>TrackValueControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorEditor\ColorEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorEditor\ColorEditor.designer.cs">
+      <DependentUpon>ColorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorEditor\ColorEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorEditor\ColorEditorForm.designer.cs">
+      <DependentUpon>ColorEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorEditor\ColorPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorEditor\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Configurator\Configurator.cs" />
+    <Compile Include="Controls\FloatValueControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ValueTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VectorControl.Designer.cs">
+      <DependentUpon>VectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlWithSceneUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlWithSceneUpdate.Designer.cs">
+      <DependentUpon>ControlWithSceneUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\DependencyGraphViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyGraphViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyGraphViewerForm.Designer.cs">
+      <DependentUpon>DependencyGraphViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyControl.Designer.cs">
+      <DependentUpon>DependencyPropertyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyListControl.Designer.cs">
+      <DependentUpon>DependencyPropertyListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\DependencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyForm.Designer.cs">
+      <DependentUpon>DependencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyTreeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyTreeControl.Designer.cs">
+      <DependentUpon>DependencyPropertyTreeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyTreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyPropertyTreeForm.Designer.cs">
+      <DependentUpon>DependencyPropertyTreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\DependencyTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyValueControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependency\DependencyValueControl.Designer.cs">
+      <DependentUpon>DependencyValueControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\GraphDependencyPropertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependency\GraphDependencyPropertyControl.Designer.cs">
+      <DependentUpon>GraphDependencyPropertyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\GraphDependencyPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependency\GraphDependencyPropertyForm.Designer.cs">
+      <DependentUpon>GraphDependencyPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\SimpleDependencyPropertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dependency\SimpleDependencyPropertyControl.Designer.cs">
+      <DependentUpon>SimpleDependencyPropertyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dependency\SimpleDependencyPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dependency\SimpleDependencyPropertyForm.Designer.cs">
+      <DependentUpon>SimpleDependencyPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EffectListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EffectListControl.Designer.cs">
+      <DependentUpon>EffectListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EffectListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EffectListForm.Designer.cs">
+      <DependentUpon>EffectListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterNameForm.Designer.cs">
+      <DependentUpon>EnterNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterStringControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnterStringControl.Designer.cs">
+      <DependentUpon>EnterStringControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWithSceneUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWithSceneUpdate.Designer.cs">
+      <DependentUpon>FormWithSceneUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGallery\ImageGalleryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageGallery\ImageGalleryControl.designer.cs">
+      <DependentUpon>ImageGalleryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGallery\ImageGalleryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageGallery\ImageGalleryForm.designer.cs">
+      <DependentUpon>ImageGalleryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGallery\ImageViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageGallery\ImageViewForm.designer.cs">
+      <DependentUpon>ImageViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageObjectListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageObjectListControl.Designer.cs">
+      <DependentUpon>ImageObjectListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageViewForm.Designer.cs">
+      <DependentUpon>ImageViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InheritedClassMapper\a3dGraph.cs" />
+    <Compile Include="InheritedClassMapper\a3dGraphNode.cs" />
+    <Compile Include="InheritedClassMapper\a3dScene.cs" />
+    <Compile Include="InputHandler.cs" />
+    <Compile Include="LandPassInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LandPassInfoForm.Designer.cs">
+      <DependentUpon>LandPassInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandscapeListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LandscapeListForm.Designer.cs">
+      <DependentUpon>LandscapeListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandscapePassesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LandscapePassesControl.Designer.cs">
+      <DependentUpon>LandscapePassesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandscapePassInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LandscapePassInfo.Designer.cs">
+      <DependentUpon>LandscapePassInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandscapeProps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LandscapeProps.Designer.cs">
+      <DependentUpon>LandscapeProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandscapePropsEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LandscapePropsEx.Designer.cs">
+      <DependentUpon>LandscapePropsEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandscapePropsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LandscapePropsForm.Designer.cs">
+      <DependentUpon>LandscapePropsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LightMapManager\LightMapInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LightMapManager\LightMapInfoControl.Designer.cs">
+      <DependentUpon>LightMapInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LightMapManager\LightMapInfoManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LightMapManager\LightMapInfoManagerForm.Designer.cs">
+      <DependentUpon>LightMapInfoManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LightMapManager\LightMapManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LightMapManager\LightMapManagerControl.Designer.cs">
+      <DependentUpon>LightMapManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\a3dDirectionalLightControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lights\a3dDirectionalLightControl.Designer.cs">
+      <DependentUpon>a3dDirectionalLightControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\a3dLightBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lights\a3dLightBaseControl.Designer.cs">
+      <DependentUpon>a3dLightBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\a3dLightControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lights\a3dLightControl.Designer.cs">
+      <DependentUpon>a3dLightControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\a3dLightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lights\a3dLightForm.Designer.cs">
+      <DependentUpon>a3dLightForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lights\a3dOmniLightControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lights\a3dOmniLightControl.Designer.cs">
+      <DependentUpon>a3dOmniLightControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadSceneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadSceneControl.Designer.cs">
+      <DependentUpon>LoadSceneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadSceneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadSceneForm.Designer.cs">
+      <DependentUpon>LoadSceneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelRefCollectionViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModelRefCollectionViewControl.Designer.cs">
+      <DependentUpon>ModelRefCollectionViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelRefListCollectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelRefListCollectionForm.Designer.cs">
+      <DependentUpon>ModelRefListCollectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectPropertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectPropertyControl.Designer.cs">
+      <DependentUpon>ObjectPropertyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="outputControl\OutputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="outputControl\OutputControl.Designer.cs">
+      <DependentUpon>OutputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParticleSystem\ParticleSystemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParticleSystem\ParticleSystemControl.Designer.cs">
+      <DependentUpon>ParticleSystemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParticleSystem\ParticleSystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParticleSystem\ParticleSystemForm.Designer.cs">
+      <DependentUpon>ParticleSystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassCollectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PassCollectionControl.Designer.cs">
+      <DependentUpon>PassCollectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddLandscapeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddLandscapeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddModelRefControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddModelRefControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddModelRefForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddModelRefForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRailSystemForm.resx">
+      <DependentUpon>AddRailSystemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AxisControl\AxisControl.resx">
+      <DependentUpon>AxisControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AxisControl\AxisesControl.resx">
+      <DependentUpon>AxisesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AxisControl\AxisesForm.resx">
+      <DependentUpon>AxisesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AxisControl\MoveForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MoveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AxisControl\TrackValueControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TrackValueControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorEditor\ColorEditor.resx">
+      <DependentUpon>ColorEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorEditor\ColorEditorForm.resx">
+      <DependentUpon>ColorEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EffectListControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EffectListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EffectListForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EffectListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterNameForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EnterNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterStringControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EnterStringControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWithSceneUpdate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormWithSceneUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageGallery\ImageGalleryControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImageGalleryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageGallery\ImageGalleryForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImageGalleryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageObjectListControl.resx">
+      <DependentUpon>ImageObjectListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageViewForm.resx">
+      <DependentUpon>ImageViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandPassInfoForm.resx">
+      <DependentUpon>LandPassInfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandscapeListForm.resx">
+      <DependentUpon>LandscapeListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandscapePassesControl.resx">
+      <DependentUpon>LandscapePassesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandscapePassInfo.resx">
+      <DependentUpon>LandscapePassInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandscapeProps.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LandscapeProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandscapePropsEx.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LandscapePropsEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandscapePropsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LandscapePropsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightMapManager\LightMapInfoControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LightMapInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightMapManager\LightMapInfoManagerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LightMapInfoManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightMapManager\LightMapManagerControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LightMapManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadSceneControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoadSceneControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadSceneForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoadSceneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelRefCollectionViewControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ModelRefCollectionViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelRefListCollectionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ModelRefListCollectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectPropertyControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ObjectPropertyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassCollectionControl.resx">
+      <DependentUpon>PassCollectionControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RailSystemInfoControl.resx">
+      <DependentUpon>RailSystemInfoControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneContentControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SceneContentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\BoolArrayShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BoolArrayShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\BoolMatrixArrayShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BoolMatrixArrayShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\BoolMatrixShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BoolMatrixShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\BoolShaderParamValue.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BoolShaderParamValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\ColorShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ColorShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\FloatArrayShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FloatArrayShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\FloatMatrixArrayShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FloatMatrixArrayShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\FloatShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FloatShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\IntArrayShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IntArrayShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\IntMatrixArrayShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IntMatrixArrayShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\IntMatrixShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IntMatrixShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\IntShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IntShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\FloatMatrixShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FloatMatrixShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\MatrixShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MatrixShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\NumericShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NumericShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\ShaderParamInfoBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShaderParamInfoBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\ShaderParamsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShaderParamsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\ShaderParamsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShaderParamsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\TechniqueShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TechniqueShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaderParams\TextureShaderParam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextureShaderParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolutionControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SolutionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SceneSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneSettingsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SceneSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RailSystemInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RailSystemInfoControl.Designer.cs">
+      <DependentUpon>RailSystemInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneContentControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SceneFilesInfo.cs" />
+    <Compile Include="SerializableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\BaseMatrixShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\BaseMatrixShaderParam.Designer.cs">
+      <DependentUpon>BaseMatrixShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\BoolArrayShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\BoolArrayShaderParam.Designer.cs">
+      <DependentUpon>BoolArrayShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\BoolMatrixArrayShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\BoolMatrixArrayShaderParam.Designer.cs">
+      <DependentUpon>BoolMatrixArrayShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\BoolMatrixShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\BoolMatrixShaderParam.Designer.cs">
+      <DependentUpon>BoolMatrixShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\BoolShaderParamValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\BoolShaderParamValue.Designer.cs">
+      <DependentUpon>BoolShaderParamValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\ColorShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\ColorShaderParam.Designer.cs">
+      <DependentUpon>ColorShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\FloatArrayShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\FloatArrayShaderParam.Designer.cs">
+      <DependentUpon>FloatArrayShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\FloatMatrixArrayShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\FloatMatrixArrayShaderParam.Designer.cs">
+      <DependentUpon>FloatMatrixArrayShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\FloatShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\FloatShaderParam.Designer.cs">
+      <DependentUpon>FloatShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\IntArrayShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\IntArrayShaderParam.Designer.cs">
+      <DependentUpon>IntArrayShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\IntMatrixArrayShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\IntMatrixArrayShaderParam.Designer.cs">
+      <DependentUpon>IntMatrixArrayShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\IntMatrixShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\IntMatrixShaderParam.Designer.cs">
+      <DependentUpon>IntMatrixShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\IntShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\IntShaderParam.Designer.cs">
+      <DependentUpon>IntShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\FloatMatrixShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\FloatMatrixShaderParam.Designer.cs">
+      <DependentUpon>FloatMatrixShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\MatrixShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\MatrixShaderParam.Designer.cs">
+      <DependentUpon>MatrixShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\NumericShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\NumericShaderParam.Designer.cs">
+      <DependentUpon>NumericShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\ShaderParamInfoBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\ShaderParamInfoBase.Designer.cs">
+      <DependentUpon>ShaderParamInfoBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\ShaderParamsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\ShaderParamsControl.Designer.cs">
+      <DependentUpon>ShaderParamsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\ShaderParamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\ShaderParamsForm.Designer.cs">
+      <DependentUpon>ShaderParamsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\TechniqueShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\TechniqueShaderParam.Designer.cs">
+      <DependentUpon>TechniqueShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShaderParams\TextureShaderParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShaderParams\TextureShaderParam.Designer.cs">
+      <DependentUpon>TextureShaderParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SolutionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SolutionControl.Designer.cs">
+      <DependentUpon>SolutionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SceneSettings.Designer.cs">
+      <DependentUpon>SceneSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneSettingsForm.Designer.cs">
+      <DependentUpon>SceneSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeLineEditor\TimeLineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimeLineEditor\TimeLineControl.Designer.cs">
+      <DependentUpon>TimeLineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeLineEditor\TimeLineControlSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeLineEditor\TimeLineControlSettingsForm.Designer.cs">
+      <DependentUpon>TimeLineControlSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeLineEditor\TimeLineEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TmpImageCreator.cs" />
+    <Compile Include="ViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControl.Designer.cs">
+      <DependentUpon>ViewControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\moveIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\rotateIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\scaleIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="a3dGraph\a3dGraphPropForm.resx">
+      <DependentUpon>a3dGraphPropForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="a3dGraph\GraphControl.resx">
+      <DependentUpon>GraphControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="a3dGraph\GraphNameForm.resx">
+      <DependentUpon>GraphNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="a3dScript\ScriptEdit.resx">
+      <DependentUpon>ScriptEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="a3dScript\ScriptEditControl.resx">
+      <DependentUpon>ScriptEditControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="a3dScript\ScriptForm.resx">
+      <DependentUpon>ScriptForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VectorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyGraphViewer.resx">
+      <DependentUpon>DependencyGraphViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyGraphViewerForm.resx">
+      <DependentUpon>DependencyGraphViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyPropertyControl.resx">
+      <DependentUpon>DependencyPropertyControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyPropertyListControl.resx">
+      <DependentUpon>DependencyPropertyListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyForm.resx">
+      <DependentUpon>DependencyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyPropertyTreeControl.resx">
+      <DependentUpon>DependencyPropertyTreeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyPropertyTreeForm.resx">
+      <DependentUpon>DependencyPropertyTreeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyTree.resx">
+      <DependentUpon>DependencyTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\DependencyValueControl.resx">
+      <DependentUpon>DependencyValueControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\GraphDependencyPropertyControl.resx">
+      <DependentUpon>GraphDependencyPropertyControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\GraphDependencyPropertyForm.resx">
+      <DependentUpon>GraphDependencyPropertyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\SimpleDependencyPropertyControl.resx">
+      <DependentUpon>SimpleDependencyPropertyControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dependency\SimpleDependencyPropertyForm.resx">
+      <DependentUpon>SimpleDependencyPropertyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\Deault_18x18.png" />
+    <EmbeddedResource Include="images\Details_18x18.png" />
+    <EmbeddedResource Include="images\DirLight_18x18.png" />
+    <EmbeddedResource Include="images\Effects_18x18.png" />
+    <EmbeddedResource Include="images\Lands_18x18.png" />
+    <EmbeddedResource Include="images\LineRail_18x18.png" />
+    <EmbeddedResource Include="images\Materials_18x18.png" />
+    <EmbeddedResource Include="images\Material_18x18.png" />
+    <EmbeddedResource Include="images\Models_18x18.png" />
+    <EmbeddedResource Include="images\Objects_18x18.png" />
+    <EmbeddedResource Include="images\OmniLight_18x18.png" />
+    <EmbeddedResource Include="images\Particles_18x18.png" />
+    <EmbeddedResource Include="images\Rails_18x18.png" />
+    <EmbeddedResource Include="images\RoundRail_18x18.png" />
+    <EmbeddedResource Include="images\Texture_18x18.png" />
+    <EmbeddedResource Include="Lights\a3dDirectionalLightControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>a3dDirectionalLightControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\a3dLightBaseControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>a3dLightBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\a3dLightControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>a3dLightControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\a3dLightForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>a3dLightForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lights\a3dOmniLightControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>a3dOmniLightControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="outputControl\OutputControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OutputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticleSystem\ParticleSystemControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ParticleSystemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticleSystem\ParticleSystemForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ParticleSystemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeLineEditor\TimeLineControl.resx">
+      <DependentUpon>TimeLineControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeLineEditor\TimeLineControlSettingsForm.resx">
+      <DependentUpon>TimeLineControlSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\scriptEditorIcons\new16.png" />
+    <None Include="images\scriptEditorIcons\open16.png" />
+    <None Include="images\scriptEditorIcons\copy16.png" />
+    <None Include="images\scriptEditorIcons\paste16.png" />
+    <None Include="images\scriptEditorIcons\cut16.png" />
+    <None Include="images\scriptEditorIcons\find16.png" />
+    <Content Include="images\scriptEditorIcons\Properties.png" />
+    <None Include="images\scriptEditorIcons\save16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

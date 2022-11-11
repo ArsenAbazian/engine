@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shortcuts>
+	<!-- Навигация по тексту -->
+	<Shortcut Key="Up"                      Action="CaretViewLineUp"/>
+	<Shortcut Key="Down"                    Action="CaretViewLineDown"/>
+	<Shortcut Key="Shift | Up"              Action="CaretViewLineUpExtend"/>
+	<Shortcut Key="Shift | Down"            Action="CaretViewLineDownExtend"/>
+	<Shortcut Key="Home"                    Action="CaretViewLineHome"/>
+	<Shortcut Key="End"                     Action="CaretViewLineEnd"/>
+	<Shortcut Key="Shift | Home"            Action="CaretViewLineHomeExtend"/>
+	<Shortcut Key="Shift | End"             Action="CaretViewLineEndExtend"/>
+	<Shortcut Key="Left"                    Action="CaretLeft"/>
+	<Shortcut Key="Control | Left"          Action="CaretWordLeft"/>
+	<Shortcut Key="Control | Right"         Action="CaretWordRight"/>
+	<Shortcut Key="Shift | Control | Left"  Action="CaretWordLeftExtend"/>
+	<Shortcut Key="Shift | Control | Right" Action="CaretWordRightExtend"/>
+	<Shortcut Key="Shift | Left"            Action="CaretLeftExtend"/>
+	<Shortcut Key="Shift | Right"           Action="CaretRightExtend"/>
+	<Shortcut Key="Right"                   Action="CaretRight"/>
+	<Shortcut Key="PageUp"                  Action="PageUp"/>
+	<Shortcut Key="PageDown"                Action="PageDowd"/>
+	<Shortcut Key="Control | Home"          Action="CaretDocumentHome"/>
+	<Shortcut Key="Control | End"           Action="CaretDocumentEnd"/>
+	<Shortcut Key="Shift | Control | Home"  Action="CaretDocumentHomeExtend"/>
+	<Shortcut Key="Shift | Control | End"   Action="CaretDocumentEndExtend"/>
+	<Shortcut Key="Control | A"             Action="SelectAll"/>
+	<!-- Клипборд -->
+    <Shortcut Key="Control | C"             Action="Copy"/>
+    <Shortcut Key="Control | Insert"        Action="Copy"/>
+	<Shortcut Key="Control | V"             Action="Paste"/>
+	<Shortcut Key="Shift | Insert"          Action="Paste"/>
+	<Shortcut Key="Control | X"             Action="Cut"/>
+	<Shortcut Key="Shift | Delete"          Action="Cut"/>
+	<!-- Редактирование -->
+	<Shortcut Key="Delete"                  Action="Delete"/>
+	<Shortcut Key="Back"                    Action="DeleteBack"/>
+	<Shortcut Key="Control | Z"             Action="Undo"/>
+	<Shortcut Key="Alt | Back"              Action="Undo"/>
+	<Shortcut Key="Control | Y"             Action="Redo"/>
+	<Shortcut Key="Alt | Shift | Back"      Action="Redo"/>
+	<!-- Отладка -->
+	<Shortcut Key="F5"                      Action="Test1"/>
+	<Shortcut Key="F6"                      Action="PaintTest"/>
+</Shortcuts>

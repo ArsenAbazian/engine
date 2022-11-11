@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugSceneEditor|Win32">
+      <Configuration>DebugSceneEditor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{19F86B51-18FC-4DF7-8E65-DA831ACA4B3C}</ProjectGuid>
+    <RootNamespace>kernel</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSceneEditor|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugSceneEditor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\libs\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSceneEditor|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>D:\Program Files\Development\Microsoft Visual Studio 9.0\VC\include;D:\Program Files\Development\Microsoft DirectX SDK (August 2008)\Include;..\..\m_png\m_png\m_png\sources;..\m_png\m_png\sources;..\utils\utils\sources;..\scriptSystem\scriptSystem\sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>utils.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(ProjectDir)\..\libs\$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>..\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugSceneEditor|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Program Files\programming\Microsoft Visual Studio 8\VC\PlatformSDK\Include;O:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK\Include;C:\Program Files\programming\DXSDK\Include;O:\Program Files\DXSDK\Include;C:\Program Files\Microsoft Visual Studio 9.0\VC\include;C:\Program Files\Microsoft DirectX 9.0 SDK (October 2005)\Include;..\..\..\m_png\m_png\m_png\sources;..\..\m_png\m_png\sources;..\..\utils\utils\sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_DEBUGSCENEEDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>utils.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(ProjectDir)\..\..\libs\$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>..\..\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\a3dScene.cpp" />
+    <ClCompile Include="sources\a3dTextFileTokens.cpp" />
+    <ClCompile Include="sources\a3dTextModelFile.cpp" />
+    <ClCompile Include="sources\a3dTextSceneFile.cpp" />
+    <ClCompile Include="sources\a3dTimeProvider.cpp" />
+    <ClCompile Include="sources\anim.cpp" />
+    <ClCompile Include="sources\boundBox.cpp" />
+    <ClCompile Include="sources\config.cpp" />
+    <ClCompile Include="sources\font.cpp" />
+    <ClCompile Include="sources\fps.cpp" />
+    <ClCompile Include="sources\grid.cpp" />
+    <ClCompile Include="sources\hlslman.cpp" />
+    <ClCompile Include="sources\image.cpp" />
+    <ClCompile Include="sources\kernel.cpp" />
+    <ClCompile Include="sources\landscape.cpp" />
+    <ClCompile Include="sources\light.cpp" />
+    <ClCompile Include="sources\lightMapGrid.cpp" />
+    <ClCompile Include="sources\lightMapInfo.cpp" />
+    <ClCompile Include="sources\mathUtils.cpp" />
+    <ClCompile Include="sources\n3dsfile.cpp" />
+    <ClCompile Include="sources\Ncamera.cpp" />
+    <ClCompile Include="sources\otree.cpp" />
+    <ClCompile Include="sources\radiosity.cpp" />
+    <ClCompile Include="sources\railManager.cpp" />
+    <ClCompile Include="sources\rand.cpp" />
+    <ClCompile Include="sources\rcmanager.cpp" />
+    <ClCompile Include="sources\renderHelper.cpp" />
+    <ClCompile Include="sources\rstate.cpp" />
+    <ClCompile Include="sources\splineManager.cpp" />
+    <ClCompile Include="sources\sprite.cpp" />
+    <ClCompile Include="sources\stblock.cpp" />
+    <ClCompile Include="sources\texture.cpp" />
+    <ClCompile Include="sources\train.cpp" />
+    <ClCompile Include="sources\treeManager.cpp" />
+    <ClCompile Include="sources\utils.cpp" />
+    <ClCompile Include="sources\vertexInfo.cpp" />
+    <ClCompile Include="sources\vutil.cpp" />
+    <ClCompile Include="sources\wave.cpp" />
+    <ClCompile Include="sources\xor.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dDescBase.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dEffectDesc.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dFontDesc.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dLandDesc.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dModelDesc.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dParticleDesc.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dRailDesc.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dSoundDesc.cpp" />
+    <ClCompile Include="sources\a3dDesc\a3dTextureDesc.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dBoolArrayShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dBoolShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dFloatArrayShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dFloatShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dIntArrayShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dIntShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dMatrixArrayShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dMatrixShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dShaderParamBase.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dTechniqueShaderParam.cpp" />
+    <ClCompile Include="sources\a3dShaderParam\a3dTextureShaderParam.cpp" />
+    <ClCompile Include="sources\a3dModel\a3dDetail.cpp" />
+    <ClCompile Include="sources\a3dModel\a3dMathObject.cpp" />
+    <ClCompile Include="sources\a3dModel\a3dModel.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='DebugSceneEditor|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='DebugSceneEditor|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="sources\a3dModel\a3dObject.cpp" />
+    <ClCompile Include="sources\a3dModelRef\a3dDetailRef.cpp" />
+    <ClCompile Include="sources\a3dModelRef\a3dModelRef.cpp" />
+    <ClCompile Include="sources\a3dModelRef\a3dObjectRef.cpp" />
+    <ClCompile Include="sources\a3dLight\a3dDirectionalLight.cpp" />
+    <ClCompile Include="sources\a3dLight\a3dLightBase.cpp" />
+    <ClCompile Include="sources\a3dLight\a3dOmniLight.cpp" />
+    <ClCompile Include="sources\a3dMaterial\a3dMaterialBase.cpp" />
+    <ClCompile Include="sources\a3dMaterial\a3dMultiMaterial.cpp" />
+    <ClCompile Include="sources\a3dMaterial\a3dShaderMaterial.cpp" />
+    <ClCompile Include="sources\a3dMaterial\a3dStandardMaterial.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dDetailInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dEffectInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dLandPassInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dLandscapeInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dModelInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dModelObjectInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dObjectInfoBase.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dParticleInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dRailSystemInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dSprayParticleInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dTextureInfo.cpp" />
+    <ClCompile Include="sources\a3dObjectInfo\a3dVisualObjectInfoBase.cpp" />
+    <ClCompile Include="sources\fxFileParser\fxFileParser.cpp" />
+    <ClCompile Include="sources\a3dDependency\a3dDependencyBase.cpp" />
+    <ClCompile Include="sources\a3dDependency\a3dDependencyProperty.cpp" />
+    <ClCompile Include="sources\a3dDependency\a3dDependencyPropertyInfoStore.cpp" />
+    <ClCompile Include="sources\a3dDependency\a3dDependencyPropertyOwner.cpp" />
+    <ClCompile Include="sources\a3dDependency\a3dGraphDependency.cpp" />
+    <ClCompile Include="sources\a3dDependency\a3dSimpleDependency.cpp" />
+    <ClCompile Include="sources\a3dGraph\a3dGraph.cpp" />
+    <ClCompile Include="sources\a3dGraph\a3dGraphNode.cpp" />
+    <ClCompile Include="sources\a3dParticleSystem\particles.cpp" />
+    <ClCompile Include="sources\a3dParticleSystem\particleSystemBase.cpp" />
+    <ClCompile Include="sources\a3dUtils\a3dTextUtils.cpp" />
+    <ClCompile Include="sources\a3dUtils\resizeableArray.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sources\a3dScene.h" />
+    <ClInclude Include="sources\a3dSceneDefinitions.h" />
+    <ClInclude Include="sources\a3dTextFileTokens.h" />
+    <ClInclude Include="sources\a3dTextModelFile.h" />
+    <ClInclude Include="sources\a3dTextSceneFile.h" />
+    <ClInclude Include="sources\a3dTimeProvider.h" />
+    <ClInclude Include="sources\anim.h" />
+    <ClInclude Include="sources\boundBox.h" />
+    <ClInclude Include="sources\config.h" />
+    <ClInclude Include="sources\delegate.h" />
+    <ClInclude Include="sources\font.h" />
+    <ClInclude Include="sources\fps.h" />
+    <ClInclude Include="sources\grid.h" />
+    <ClInclude Include="sources\headerCodes.h" />
+    <ClInclude Include="sources\hlslman.h" />
+    <ClInclude Include="sources\image.h" />
+    <ClInclude Include="sources\kernel.h" />
+    <ClInclude Include="sources\landscape.h" />
+    <ClInclude Include="sources\light.h" />
+    <ClInclude Include="sources\lightMapCreator.h" />
+    <ClInclude Include="sources\lightMapGrid.h" />
+    <ClInclude Include="sources\lightMapInfo.h" />
+    <ClInclude Include="sources\mathUtils.h" />
+    <ClInclude Include="sources\n3dsfile.h" />
+    <ClInclude Include="sources\Ncamera.h" />
+    <ClInclude Include="sources\otree.h" />
+    <ClInclude Include="sources\radiosity.h" />
+    <ClInclude Include="sources\railManager.h" />
+    <ClInclude Include="sources\rand.h" />
+    <ClInclude Include="sources\rcmanager.h" />
+    <ClInclude Include="sources\renderHelper.h" />
+    <ClInclude Include="sources\rstate.h" />
+    <ClInclude Include="sources\splineManager.h" />
+    <ClInclude Include="sources\sprite.h" />
+    <ClInclude Include="sources\stblock.h" />
+    <ClInclude Include="sources\texture.h" />
+    <ClInclude Include="sources\train.h" />
+    <ClInclude Include="sources\treeManager.h" />
+    <ClInclude Include="sources\utils.h" />
+    <ClInclude Include="sources\vertexInfo.h" />
+    <ClInclude Include="sources\vutil.h" />
+    <ClInclude Include="sources\wave.h" />
+    <ClInclude Include="sources\xor.h" />
+    <ClInclude Include="sources\a3dDesc\a3dDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dDescBase.h" />
+    <ClInclude Include="sources\a3dDesc\a3dEffectDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dFontDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dLandDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dModelDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dParticleDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dRailDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dSoundDesc.h" />
+    <ClInclude Include="sources\a3dDesc\a3dTextureDesc.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dBoolArrayShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dBoolShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dColorShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dFloatArrayShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dFloatShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dIntArrayShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dIntShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dMatrixArrayShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dMatrixShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dShaderParamBase.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dShaderParams.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dShaderParamType.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dTechniqueShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dTextureShaderParam.h" />
+    <ClInclude Include="sources\a3dShaderParam\a3dVectorShaderParam.h" />
+    <ClInclude Include="sources\a3dModel\a3dDetail.h" />
+    <ClInclude Include="sources\a3dModel\a3dMathObject.h" />
+    <ClInclude Include="sources\a3dModel\a3dModel.h" />
+    <ClInclude Include="sources\a3dModel\a3dObject.h" />
+    <ClInclude Include="sources\a3dModel\delegate.h" />
+    <ClInclude Include="sources\a3dModelRef\a3dDetailRef.h" />
+    <ClInclude Include="sources\a3dModelRef\a3dModelRef.h" />
+    <ClInclude Include="sources\a3dModelRef\a3dObjectRef.h" />
+    <ClInclude Include="sources\a3dLight\a3dDirectionalLight.h" />
+    <ClInclude Include="sources\a3dLight\a3dLight.h" />
+    <ClInclude Include="sources\a3dLight\a3dLightBase.h" />
+    <ClInclude Include="sources\a3dLight\a3dLightType.h" />
+    <ClInclude Include="sources\a3dLight\a3dOmniLight.h" />
+    <ClInclude Include="sources\a3dMaterial\a3dMaterialBase.h" />
+    <ClInclude Include="sources\a3dMaterial\a3dMaterialType.h" />
+    <ClInclude Include="sources\a3dMaterial\a3dMultiMaterial.h" />
+    <ClInclude Include="sources\a3dMaterial\a3dShaderMaterial.h" />
+    <ClInclude Include="sources\a3dMaterial\a3dStandardMaterial.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dDetailInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dEffectInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dLandPassInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dLandscapeInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dModelInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dModelObjectInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dObjectInfoBase.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dObjectsInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dParticleInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dRailSystemInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dSprayParticleInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dTextureInfo.h" />
+    <ClInclude Include="sources\a3dObjectInfo\a3dVisualObjectInfoBase.h" />
+    <ClInclude Include="sources\fxFileParser\fxFileParser.h" />
+    <ClInclude Include="sources\a3dDependency\a3dDependencyBase.h" />
+    <ClInclude Include="sources\a3dDependency\a3dDependencyProperty.h" />
+    <ClInclude Include="sources\a3dDependency\a3dDependencyPropertyInfoStore.h" />
+    <ClInclude Include="sources\a3dDependency\a3dDependencyPropertyOwner.h" />
+    <ClInclude Include="sources\a3dDependency\a3dDependencyPropType.h" />
+    <ClInclude Include="sources\a3dDependency\a3dDependencyType.h" />
+    <ClInclude Include="sources\a3dDependency\a3dGraphDependency.h" />
+    <ClInclude Include="sources\a3dDependency\a3dScriptDependency.h" />
+    <ClInclude Include="sources\a3dDependency\a3dSimpleDependency.h" />
+    <ClInclude Include="sources\a3dGraph\a3dGraph.h" />
+    <ClInclude Include="sources\a3dGraph\a3dGraphNode.h" />
+    <ClInclude Include="sources\a3dGraph\a3dGraphType.h" />
+    <ClInclude Include="sources\a3dParticleSystem\particles.h" />
+    <ClInclude Include="sources\a3dParticleSystem\particleSystemBase.h" />
+    <ClInclude Include="sources\a3dParticleSystem\particleTypes.h" />
+    <ClInclude Include="sources\a3dUtils\a3dTextUtils.h" />
+    <ClInclude Include="sources\a3dUtils\resizeableArray.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
